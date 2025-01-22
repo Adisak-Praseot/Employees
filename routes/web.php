@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 Route::get('/employee', [EmployeesController::class, 'index'])->middleware('auth')->name('employee.index');
+Route::get('/employee/create', [EmployeesController::class, 'create'])->name('employee.create');
+Route::post('/employee', [EmployeesController::class, 'store'])->name('employee.store');
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
